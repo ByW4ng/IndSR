@@ -1,0 +1,1776 @@
+
+<!-- saved from url=(0056)https://wangyanckxx.github.io/Proj_CVPR2022_FERV39k.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<script async="" src="./FERV39k_files/analytics.js.下载"></script><script async="" src="./FERV39k_files/analytics.js(1).下载"></script>
+	<script src="./FERV39k_files/jsapi" type="text/javascript"></script>
+	<script type="text/javascript">google.load("jquery", "1.3.2");</script><script type="text/javascript" charset="UTF-8" src="./FERV39k_files/jquery.min.js.下载"></script>
+
+	<style type="text/css">
+		body {
+			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			font-weight: 300;
+			font-size: 16px;
+			margin-left: auto;
+			margin-right: auto;
+			width: 800px;
+		}
+
+		h1 {
+			font-weight: 300;
+		}
+
+		h2 {
+			font-weight: 300;
+			font-size: 22px;
+			text-align: left;
+		}
+
+		.disclaimerbox {
+			background-color: #eee;
+			border: 1px solid #eeeeee;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			padding: 20px;
+		}
+
+		video.header-vid {
+			height: 140px;
+			border: 1px solid black;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+
+		img.header-img {
+			height: 140px;
+			border: 1px solid black;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+
+		img.rounded {
+			border: 1px solid #eeeeee;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+
+		a:link,
+		a:visited {
+			color: #1367a7;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #208799;
+		}
+
+		td.dl-link {
+			height: 160px;
+			text-align: center;
+			font-size: 22px;
+		}
+
+		.layered-paper-big {
+			/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+			box-shadow:
+				0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The top layer shadow */
+				5px 5px 0 0px #fff,
+				/* The second layer */
+				5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The second layer shadow */
+				10px 10px 0 0px #fff,
+				/* The third layer */
+				10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The third layer shadow */
+				15px 15px 0 0px #fff,
+				/* The fourth layer */
+				15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The fourth layer shadow */
+				20px 20px 0 0px #fff,
+				/* The fifth layer */
+				20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The fifth layer shadow */
+				25px 25px 0 0px #fff,
+				/* The fifth layer */
+				25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+			/* The fifth layer shadow */
+			margin-left: 10px;
+			margin-right: 45px;
+		}
+
+		.paper-big {
+			/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+			box-shadow:
+				0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+			/* The top layer shadow */
+
+			margin-left: 10px;
+			margin-right: 45px;
+		}
+
+
+		.layered-paper {
+			/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+			box-shadow:
+				0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The top layer shadow */
+				5px 5px 0 0px #fff,
+				/* The second layer */
+				5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The second layer shadow */
+				10px 10px 0 0px #fff,
+				/* The third layer */
+				10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+			/* The third layer shadow */
+			margin-top: 5px;
+			margin-left: 10px;
+			margin-right: 30px;
+			margin-bottom: 5px;
+		}
+
+		.vert-cent {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		hr {
+			border: 0;
+			height: 1px;
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+		}
+
+		pre {
+			text-align: left;
+			white-space: pre;
+			background-color: ghostwhite;
+			border: 1px solid #CCCCCC;
+			padding: 10px 20px;
+			margin: 10px;
+			tab-size: 4;
+			/* Chrome 21+, Safari 6.1+, Opera 15+ */
+			-moz-tab-size: 4;
+			/* Firefox 4+ */
+			-o-tab-size: 4;
+			/* Opera 11.5 & 12.1 only */
+		}
+	</style>
+
+
+
+	<title>FERV39k: A Large-Scale Multi-Scene Dataset for Facial Expression Recognition
+		in Videos</title>
+	<meta property="og:image" content="">
+	<meta property="og:title" content="FERV39k: A Large-Scale Multi-Scene Dataset for Facial Expression Recognition
+in Videos">
+<style type="text/css">@font-face {
+  font-family: "xm-iconfont";
+  src: url('//at.alicdn.com/t/font_792691_ptvyboo0bno.eot?t=1574048839056');
+  /* IE9 */
+  src: url('//at.alicdn.com/t/font_792691_ptvyboo0bno.eot?t=1574048839056#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'), url('//at.alicdn.com/t/font_792691_ptvyboo0bno.woff?t=1574048839056') format('woff'), url('//at.alicdn.com/t/font_792691_ptvyboo0bno.ttf?t=1574048839056') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */ url('//at.alicdn.com/t/font_792691_ptvyboo0bno.svg?t=1574048839056#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.xm-iconfont {
+  font-family: "xm-iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.xm-icon-quanxuan:before {
+  content: "\e62c";
+}
+.xm-icon-caidan:before {
+  content: "\e610";
+}
+.xm-icon-fanxuan:before {
+  content: "\e837";
+}
+.xm-icon-pifu:before {
+  content: "\e668";
+}
+.xm-icon-qingkong:before {
+  content: "\e63e";
+}
+.xm-icon-sousuo:before {
+  content: "\e600";
+}
+.xm-icon-danx:before {
+  content: "\e62b";
+}
+.xm-icon-duox:before {
+  content: "\e613";
+}
+.xm-icon-close:before {
+  content: "\e601";
+}
+.xm-icon-expand:before {
+  content: "\e641";
+}
+.xm-icon-banxuan:before {
+  content: "\e60d";
+}
+</style><style type="text/css">@-webkit-keyframes xm-upbit {
+  from {
+    -webkit-transform: translate3d(0, 30px, 0);
+    opacity: 0.3;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes xm-upbit {
+  from {
+    transform: translate3d(0, 30px, 0);
+    opacity: 0.3;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+xm-select {
+  background-color: #FFF;
+  position: relative;
+  border: 1px solid #E6E6E6;
+  border-radius: 2px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+}
+xm-select * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+xm-select:hover,
+xm-select:focus {
+  border-color: #C0C4CC;
+}
+xm-select > .xm-tips {
+  color: #999999;
+  padding: 0 10px;
+  position: absolute;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+xm-select > .xm-icon {
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 10px;
+  top: 50%;
+  margin-top: -3px;
+  cursor: pointer;
+  border: 6px dashed transparent;
+  border-top-color: #C2C2C2;
+  border-top-style: solid;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+xm-select > .xm-icon-expand {
+  margin-top: -9px;
+  transform: rotate(180deg);
+}
+xm-select > .xm-label.single-row {
+  position: absolute;
+  top: 0;
+  bottom: 0px;
+  left: 0px;
+  right: 30px;
+  overflow: auto hidden;
+}
+xm-select > .xm-label.single-row .scroll {
+  overflow-y: hidden;
+}
+xm-select > .xm-label.single-row .label-content {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+xm-select > .xm-label.auto-row .label-content {
+  flex-wrap: wrap;
+  padding-right: 30px !important;
+}
+xm-select > .xm-label.auto-row .xm-label-block > span {
+  white-space: unset;
+  height: 100%;
+}
+xm-select > .xm-label .scroll .label-content {
+  display: flex;
+  padding: 3px 10px;
+}
+xm-select > .xm-label .xm-label-block {
+  display: flex;
+  position: relative;
+  padding: 0px 5px;
+  margin: 2px 5px 2px 0;
+  border-radius: 3px;
+  align-items: baseline;
+  color: #FFF;
+}
+xm-select > .xm-label .xm-label-block > span {
+  display: flex;
+  color: #FFF;
+  white-space: nowrap;
+}
+xm-select > .xm-label .xm-label-block > i {
+  color: #FFF;
+  margin-left: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+}
+xm-select > .xm-label .xm-label-block.disabled {
+  background-color: #C2C2C2 !important;
+  cursor: no-drop !important;
+}
+xm-select > .xm-label .xm-label-block.disabled > i {
+  cursor: no-drop !important;
+}
+xm-select > .xm-body {
+  position: absolute;
+  left: 0;
+  top: 42px;
+  padding: 5px 0;
+  z-index: 999;
+  width: 100%;
+  min-width: fit-content;
+  border: 1px solid #E6E6E6;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  animation-name: xm-upbit;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+xm-select > .xm-body .scroll-body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+xm-select > .xm-body .scroll-body::-webkit-scrollbar {
+  width: 8px;
+}
+xm-select > .xm-body .scroll-body::-webkit-scrollbar-track {
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  border-radius: 2em;
+  background-color: #FFF;
+}
+xm-select > .xm-body .scroll-body::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  border-radius: 2em;
+  background-color: #C2C2C2;
+}
+xm-select > .xm-body.up {
+  top: auto;
+  bottom: 42px;
+}
+xm-select > .xm-body.relative {
+  position: relative;
+  display: block !important;
+  top: 0;
+  box-shadow: none;
+  border: none;
+  animation-name: none;
+  animation-duration: 0;
+  min-width: 100%;
+}
+xm-select > .xm-body .xm-group {
+  cursor: default;
+}
+xm-select > .xm-body .xm-group-item {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0 10px;
+  color: #999;
+  font-size: 12px;
+}
+xm-select > .xm-body .xm-option {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 10px;
+  cursor: pointer;
+}
+xm-select > .xm-body .xm-option-icon {
+  color: transparent;
+  display: flex;
+  border: 1px solid #E6E6E6;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+}
+xm-select > .xm-body .xm-option-icon.xm-custom-icon {
+  color: unset;
+  border: unset;
+}
+xm-select > .xm-body .xm-option-icon-hidden {
+  margin-right: -10px;
+}
+xm-select > .xm-body .xm-option-icon.xm-icon-danx {
+  border-radius: 100%;
+}
+xm-select > .xm-body .xm-option-content {
+  display: flex;
+  position: relative;
+  padding-left: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  ;
+  width: calc(100% - 20px);
+}
+xm-select > .xm-body .xm-option.hide-icon .xm-option-content {
+  padding-left: 0;
+}
+xm-select > .xm-body .xm-option.selected.hide-icon .xm-option-content {
+  color: #FFF !important;
+}
+xm-select > .xm-body .xm-option .loader {
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 6px;
+  color: #C2C2C2;
+}
+xm-select > .xm-body .xm-select-empty {
+  text-align: center;
+  color: #999;
+}
+xm-select > .xm-body .disabled {
+  cursor: no-drop;
+}
+xm-select > .xm-body .disabled:hover {
+  background-color: #FFF;
+}
+xm-select > .xm-body .disabled .xm-option-icon {
+  border-color: #C2C2C2 !important;
+}
+xm-select > .xm-body .disabled .xm-option-content {
+  color: #C2C2C2 !important;
+}
+xm-select > .xm-body .disabled.selected > .xm-option-icon {
+  color: #C2C2C2 !important;
+}
+xm-select > .xm-body .xm-search {
+  background-color: #FFF !important;
+  position: relative;
+  padding: 0 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+xm-select > .xm-body .xm-search > i {
+  position: absolute;
+  color: ;
+}
+xm-select > .xm-body .xm-search-input {
+  border: none;
+  border-bottom: 1px solid #E6E6E6;
+  padding-left: 27px;
+  cursor: text;
+}
+xm-select > .xm-body .xm-paging {
+  padding: 0 10px;
+  display: flex;
+  margin-top: 5px;
+}
+xm-select > .xm-body .xm-paging > span:first-child {
+  border-radius: 2px 0 0 2px;
+}
+xm-select > .xm-body .xm-paging > span:last-child {
+  border-radius: 0 2px 2px 0;
+}
+xm-select > .xm-body .xm-paging > span {
+  display: flex;
+  flex: auto;
+  justify-content: center;
+  vertical-align: middle;
+  margin: 0 -1px 0 0;
+  background-color: #fff;
+  color: #333;
+  font-size: 12px;
+  border: 1px solid #e2e2e2;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow: hidden;
+  min-width: 50px;
+}
+xm-select > .xm-body .xm-toolbar {
+  padding: 0 10px;
+  display: flex;
+  margin: -3px 0;
+  cursor: default;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag {
+  cursor: pointer;
+  display: flex;
+  margin-right: 20px;
+  color: ;
+  align-items: baseline;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag:hover {
+  opacity: 0.8;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag:active {
+  opacity: 1;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag > i {
+  margin-right: 2px;
+  font-size: 14px;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag:last-child {
+  margin-right: 0;
+}
+xm-select > .xm-body .xm-body-custom {
+  line-height: initial;
+  cursor: default;
+}
+xm-select > .xm-body .xm-body-custom * {
+  box-sizing: initial;
+}
+xm-select > .xm-body .xm-tree {
+  position: relative;
+}
+xm-select > .xm-body .xm-tree-icon {
+  display: inline-block;
+  margin-right: 3px;
+  cursor: pointer;
+  border: 6px dashed transparent;
+  border-left-color: #C2C2C2;
+  border-left-style: solid;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  z-index: 2;
+  visibility: hidden;
+}
+xm-select > .xm-body .xm-tree-icon.expand {
+  margin-top: 3px;
+  margin-right: 5px;
+  margin-left: -2px;
+  transform: rotate(90deg);
+}
+xm-select > .xm-body .xm-tree-icon.xm-visible {
+  visibility: visible;
+}
+xm-select > .xm-body .xm-tree .left-line {
+  position: absolute;
+  left: 13px;
+  width: 0;
+  z-index: 1;
+  border-left: 1px dotted #c0c4cc !important;
+}
+xm-select > .xm-body .xm-tree .top-line {
+  position: absolute;
+  left: 13px;
+  height: 0;
+  z-index: 1;
+  border-top: 1px dotted #c0c4cc !important;
+}
+xm-select > .xm-body .xm-tree .xm-tree-icon + .top-line {
+  margin-left: 1px;
+}
+xm-select > .xm-body .scroll-body > .xm-tree > .xm-option > .top-line,
+xm-select > .xm-body .scroll-body > .xm-option > .top-line {
+  width: 0 !important;
+}
+xm-select > .xm-body .xm-cascader-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 5px 0;
+  border: 1px solid #E6E6E6;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  margin: -1px;
+}
+xm-select > .xm-body .xm-cascader-box::before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-right-color: #E6E6E6;
+  top: 10px;
+  left: -12px;
+}
+xm-select > .xm-body .xm-cascader-box::after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-right-color: #fff;
+  top: 10px;
+  left: -11px;
+}
+xm-select > .xm-body .xm-cascader-scroll {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+xm-select > .xm-body.cascader {
+  width: unset;
+  min-width: unset;
+}
+xm-select > .xm-body.cascader .xm-option-content {
+  padding-left: 8px;
+}
+xm-select > .xm-body.cascader .disabled .xm-right-arrow {
+  color: #C2C2C2 !important;
+}
+xm-select > .xm-body.cascader .hide-icon.disabled .xm-right-arrow {
+  color: #999 !important;
+}
+xm-select .xm-input {
+  cursor: pointer;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #E6E6E6;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #FFF;
+  line-height: 1.3;
+  padding-left: 10px;
+  outline: 0;
+  user-select: text;
+  -ms-user-select: text;
+  -moz-user-select: text;
+  -webkit-user-select: text;
+}
+xm-select .dis {
+  display: none;
+}
+xm-select .loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+xm-select .loader {
+  border: 0.2em dotted currentcolor;
+  border-radius: 50%;
+  -webkit-animation: 1s loader linear infinite;
+  animation: 1s loader linear infinite;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  color: inherit;
+  vertical-align: middle;
+  pointer-events: none;
+}
+xm-select .xm-select-default {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  visibility: hidden;
+}
+xm-select .xm-select-disabled {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: no-drop;
+  z-index: 2;
+  opacity: 0.3;
+  background-color: #FFF;
+}
+xm-select .item--divided {
+  border-top: 1px solid #ebeef5;
+  width: calc(100% - 20px);
+  cursor: initial;
+}
+xm-select .xm-right-arrow {
+  position: absolute;
+  color: ;
+  right: 5px;
+  top: -1px;
+  font-weight: 700;
+  transform: scale(0.6, 1);
+}
+xm-select .xm-right-arrow::after {
+  content: '>';
+}
+xm-select[size='large'] {
+  min-height: 40px;
+  line-height: 40px;
+}
+xm-select[size='large'] .xm-input {
+  height: 40px;
+}
+xm-select[size='large'] .xm-label .scroll .label-content {
+  line-height: 34px;
+}
+xm-select[size='large'] .xm-label .xm-label-block {
+  height: 30px;
+  line-height: 30px;
+}
+xm-select[size='large'] .xm-body .xm-option .xm-option-icon {
+  height: 20px;
+  width: 20px;
+  font-size: 20px;
+}
+xm-select[size='large'] .xm-paging > span {
+  height: 34px;
+  line-height: 34px;
+}
+xm-select[size='large'] .xm-tree .left-line {
+  height: 100%;
+  bottom: 20px;
+}
+xm-select[size='large'] .xm-tree .left-line-group {
+  height: calc(100% - 40px);
+}
+xm-select[size='large'] .xm-tree .xm-tree-icon.xm-hidden + .top-line {
+  top: 19px;
+}
+xm-select[size='large'] .item--divided {
+  margin: 10px;
+}
+xm-select {
+  min-height: 36px;
+  line-height: 36px;
+}
+xm-select .xm-input {
+  height: 36px;
+}
+xm-select .xm-label .scroll .label-content {
+  line-height: 30px;
+}
+xm-select .xm-label .xm-label-block {
+  height: 26px;
+  line-height: 26px;
+}
+xm-select .xm-body .xm-option .xm-option-icon {
+  height: 18px;
+  width: 18px;
+  font-size: 18px;
+}
+xm-select .xm-paging > span {
+  height: 30px;
+  line-height: 30px;
+}
+xm-select .xm-tree .left-line {
+  height: 100%;
+  bottom: 18px;
+}
+xm-select .xm-tree .left-line-group {
+  height: calc(100% - 36px);
+}
+xm-select .xm-tree .xm-tree-icon.xm-hidden + .top-line {
+  top: 17px;
+}
+xm-select .item--divided {
+  margin: 9px;
+}
+xm-select[size='small'] {
+  min-height: 32px;
+  line-height: 32px;
+}
+xm-select[size='small'] .xm-input {
+  height: 32px;
+}
+xm-select[size='small'] .xm-label .scroll .label-content {
+  line-height: 26px;
+}
+xm-select[size='small'] .xm-label .xm-label-block {
+  height: 22px;
+  line-height: 22px;
+}
+xm-select[size='small'] .xm-body .xm-option .xm-option-icon {
+  height: 16px;
+  width: 16px;
+  font-size: 16px;
+}
+xm-select[size='small'] .xm-paging > span {
+  height: 26px;
+  line-height: 26px;
+}
+xm-select[size='small'] .xm-tree .left-line {
+  height: 100%;
+  bottom: 16px;
+}
+xm-select[size='small'] .xm-tree .left-line-group {
+  height: calc(100% - 32px);
+}
+xm-select[size='small'] .xm-tree .xm-tree-icon.xm-hidden + .top-line {
+  top: 15px;
+}
+xm-select[size='small'] .item--divided {
+  margin: 8px;
+}
+xm-select[size='mini'] {
+  min-height: 28px;
+  line-height: 28px;
+}
+xm-select[size='mini'] .xm-input {
+  height: 28px;
+}
+xm-select[size='mini'] .xm-label .scroll .label-content {
+  line-height: 22px;
+}
+xm-select[size='mini'] .xm-label .xm-label-block {
+  height: 18px;
+  line-height: 18px;
+}
+xm-select[size='mini'] .xm-body .xm-option .xm-option-icon {
+  height: 14px;
+  width: 14px;
+  font-size: 14px;
+}
+xm-select[size='mini'] .xm-paging > span {
+  height: 22px;
+  line-height: 22px;
+}
+xm-select[size='mini'] .xm-tree .left-line {
+  height: 100%;
+  bottom: 14px;
+}
+xm-select[size='mini'] .xm-tree .left-line-group {
+  height: calc(100% - 28px);
+}
+xm-select[size='mini'] .xm-tree .xm-tree-icon.xm-hidden + .top-line {
+  top: 13px;
+}
+xm-select[size='mini'] .item--divided {
+  margin: 7px;
+}
+.layui-form-pane xm-select {
+  margin: -1px -1px -1px 0;
+}
+</style></head>
+
+<body>
+	<br>
+	<center>
+		<span style="font-size:40px">FERV39k: A Large-Scale Multi-Scene Dataset for Facial Expression Recognition
+			in Videos</span>
+		<table align="center" width="750px">
+			<tbody>
+				<tr>
+					<td align="center" width="80px">
+						<center>
+							<span style="font-size:24px"><a href="https://wangyanckxx.github.io/">Yan Wang</a></span>
+						</center>
+					</td>
+					<td align="center" width="100px">
+						<center>
+							<span style="font-size:24px"><a href="http://www.fudanroilab.com/2019/10/07/YixuanSun.html">Yixuan Sun</a></span>
+						</center>
+					</td>
+					<td align="center" width="100px">
+						<center>
+							<span style="font-size:24px"><a href="https://wangyanckxx.github.io/Proj_CVPR2022_FERV39k.html#">Yiwen
+									Huang</a></span>
+						</center>
+					</td>
+					<td align="center" width="100px">
+						<center>
+							<span style="font-size:24px"><a href="http://www.fudanroilab.com/2019/01/17/ZhongyingLiu.html">Zhongying
+									Liu</a></span>
+						</center>
+					</td>
+					<td align="center" width="100px">
+						<center>
+							<span style="font-size:24px"><a href="http://www.fudanroilab.com/2020/07/01/ShuyongGao.html">Shuyong Gao</a></span>
+						</center>
+					</td>
+
+					
+				</tr>
+			</tbody>
+		</table>
+		<table align="center" width="800px">
+			<tbody>
+				<tr>
+					<td align="center" width="100px">
+						<center>
+							<span style="font-size:24px"><a href="http://www.weifengge.net/">Weifeng Ge</a></span>
+						</center>
+					</td>
+					<td align="center" width="100px">
+						<center>
+							<span style="font-size:24px"><a href="http://faet.fudan.edu.cn/17/bb/c13532a137147/page.htm">Wenqiang
+									Zhang</a></span>
+						</center>
+					</td>
+					<td align="center" width="100px">
+						<center>
+							<span style="font-size:24px"><a href="https://faculty.fudan.edu.cn/zhangwei1234/zh_CN/jsxx/161831/jsxx/jsxx.htm">Wei
+									Zhang</a></span>
+						</center>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- <span style="font-size:30px">ECCV 2016.</span> -->
+
+		<table align="center" width="600px">
+			<tbody>
+				<tr>
+					<td align="center" width="100px">
+						<center>
+							<span style="font-size:20px"><a href="https://www.fudan.edu.cn/">Fudan University</a></span>
+						</center>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		IEEE Conference on Computer Vision and Pattern Recognition (<a href="http://cvpr2022.thecvf.com/" target="_blank">CVPR</a>) 2022
+		<!--, <font color="#e86e14">Oral Presentation</font>-->
+	</center>
+
+	<br><br>
+	<hr>
+
+	<br>
+	<table align="center" width="720px">
+		<tbody>
+			<tr>
+				<td width="400px">
+					<center>
+						<a href="./FERV39k_files/teaser.png"><img class="rounded" src="./FERV39k_files/teaser.png" width="800px"></a><br>
+					</center>
+				</td>
+			</tr>
+			<tr>
+				<td width="400px">
+					<center>
+						<span style="font-size:14px"><i>An overview of FERV39k composed by video frames of 7 basic
+								expression across 4 scenarios subdivided by 22 scenes.</i>
+						</span>
+					</center>
+				</td>
+
+			</tr>
+		</tbody>
+	</table>
+	<br><br>
+
+	<table align="center" width="720px">
+		<!-- <center><h1>Download</h1></center> -->
+		<tbody>
+			<tr>
+				<td width="300px">
+					<center>
+						<a href="https://wangyanckxx.github.io/Proj_CVPR2022_FERV39k.html#download"><img src="./FERV39k_files/data_icon.png" height="120px"></a><br>
+						<span style="font-size:16px">Download (annotations)</span><br>
+					</center>
+				</td>
+				<td width="300px">
+					<center>
+						<a href="https://wangyanckxx.github.io/Proj_CVPR2022_FERV39k.html#video"><img src="./FERV39k_files/video_icon.png" height="120px"></a><br>
+						<span style="font-size:16px">Videos at CVPR'2022</span><br>
+					</center>
+				</td>
+				<td width="300px">
+					<center>
+						<a href="https://wangyanckxx.github.io/Proj_CVPR2022_FERV39k.html#analysis"><img src="./FERV39k_files/magnify_glass.png" height="120px"></a><br>
+						<span style="font-size:16px">Analysis</span><br>
+					</center>
+				</td>
+				<td width="300px">
+					<center>
+						<a href="https://github.com/wangyanckxx/FERV39k"><img src="./FERV39k_files/github_icon.png" height="120px"></a><br>
+						<span style="font-size:16px">GitHub Repo</span><br>
+					</center>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br><br>
+
+	<hr>
+
+	<center>
+		<h1>Abstract</h1>
+	</center>
+	<table align="center" width="720px">
+
+	</table>
+	<p style="text-align:justify; text-justify:inter-ideograph;">
+		<span>
+
+			&nbsp;&nbsp;&nbsp;&nbsp;Current benchmarks for facial expression recognition (FER) mainly focus on static
+			images,
+			while there are limited datasets for FER in videos. It is still ambiguous to evaluate
+			whether performances of existing methods remain satisfactory in real-world application-oriented
+			scenes. For example, “Happy” expression with high intensity in Talk-Show is more discriminating
+			than the same expression with low intensity in Official-Event. To fill this gap, we build a large-scale
+			multi-scene dataset, coined as <b>FERV39k</b>. We first analyze the important ingredients of constructing
+			such a novel
+			dataset in three aspects: (1) multi-scene hierarchy and expression class,
+			(2) generation of candidate video clips, (3) trusted manual labelling process. Based on these guidelines,
+			we select <b>4 scenarios</b> subdivided into <b>22 scenes</b>, annotate <b>86k samples</b> automatically
+			obtained from <b>4k videos</b>
+			based on the well-designed workflow, and finally build <b>38,935 video clips</b> labeled with <b>7 classic
+				expressions</b>.
+			To benchmark it, we adopt and design four kinds of baseline frameworks for dynamic FER (DFER) and further
+			give an in-depth analysis on their performance across different scenes and reveal some challenges
+			for future research. To benchmark it, we adopt and design four kinds of baseline frameworks
+			for dynamic FER (DFER) and further give an in-depth analysis on their performance across
+			different scenes and reveal some challenges for future research. Besides, we systematically investigate
+			key components of FER in videos by ablation studies. We hope the FERV39k can advance research towards DFER.
+		</span>
+	</p>
+	<br><br>
+	<hr>
+
+	<!-- <center><h1>Demo video</h1></center><table align="center" width="720px">
+			
+			<tbody><tr>
+				</tr></tbody></table><table align="center" width="720px">
+					<tbody><tr>
+						<td align="center" width="720px">
+							<iframe width="600" height="320" src="./FERV39k/notLDzBJ2mg.html" frameborder="0" allowfullscreen=""></iframe>
+						</td>
+					  </tr>
+					<tr>
+						<td align="center" width="720px">
+						  <span style="font-size:14px"><i>
+							An illustrative video of FineGym's hiecharcial annotations given a complete competition.
+							Action and subaction boundaries are highlighted while irrelevant fragments are fast-forwarded.
+							We also present the tree-based process at the end of the demo video.</i>
+						</span>
+						   </td>
+					  </tr>
+					 </tbody></table>
+			  
+		  
+		   <br><br>
+		  <hr>
+
+		  <center><h1>5-Minute Oral presentation video</h1></center><table id="video" align="center" width="720px">
+			
+			<tbody><tr>
+				</tr></tbody></table><table align="center" width="720px">
+					<tbody><tr>
+						<td align="center" width="720px">
+							<iframe width="600" height="320" src="./FERV39k/nXpB5l40trg.html" frameborder="0" allowfullscreen=""></iframe>
+						</td>
+					  </tr>
+					<tr>
+					 </tr></tbody></table>
+			  
+		  
+		   <br><br>
+		  <hr>
+
+		  <center><h1>1-Minute presentation video</h1></center><table align="center" width="720px">
+			
+			<tbody><tr>
+				</tr></tbody></table><table align="center" width="720px">
+					<tbody><tr>
+						<td align="center" width="720px">
+							<iframe width="600" height="320" src="./FERV39k/b1Sm1WDcypw.html" frameborder="0" allowfullscreen=""></iframe>
+						</td>
+					  </tr>
+					<tr>
+					 </tr></tbody></table>
+			  
+		  
+		   <br><br>
+		  <hr> -->
+
+
+	<center>
+		<h1>Dataset hierarchy</h1>
+	</center>
+	<table align="center" width="720px">
+
+		<tbody>
+			<tr>
+				<td width="400px">
+					<center>
+						<a><img class="rounded" src="./FERV39k_files/hierarchy.png" width="800px"></a><br>
+					</center>
+				</td>
+			</tr>
+			<tr>
+				<td width="400px">
+					<center>
+						<span style="font-size:14px"><i>
+								Our design of 4 isolated scenarios, 22 scenes, 7 basic expressions and 26 descriptors.
+							</i>
+						</span>
+					</center>
+				</td>
+
+			</tr>
+		</tbody>
+	</table>
+	<br><br>
+	<hr>
+
+	<center>
+		<h1>Examples of scenes</h1>
+	</center>
+	<span>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			We present several examples of expressions in several scenes.
+			Each group belongs to seven basic express-ions in a scene (Happy, Sad, Surprise, Fear, Angry, Disgust, and
+			Neutral).
+			It can be seen the impact of scenes to an expression.
+		</span><table align="center" width="720px">
+
+		
+
+		<tbody>
+			<tr>
+				<td width="400px">
+					<center>
+						<a><img class="rounded" src="./FERV39k_files/dailylife1.gif" width="200px"></a>
+						<a><img class="rounded" src="./FERV39k_files/dailylife2.gif" width="200px"></a>
+						<a><img class="rounded" src="./FERV39k_files/dailylife3.gif" width="200px"></a>
+						<br>
+					</center>
+				</td>
+			</tr>
+			<tr>
+				<td width="400px">
+					<center>
+						<span style="font-size:14px"><i>
+								Dailylife
+							</i>
+						</span>
+					</center>
+				</td>
+
+		</tr></tbody><tbody>
+			<tr>
+				<td width="400px">
+					<center>
+						<a><img class="rounded" src="./FERV39k_files/ElegantArt1.gif" width="200px"></a>
+						<a><img class="rounded" src="./FERV39k_files/ElegantArt2.gif" width="200px"></a>
+						<a><img class="rounded" src="./FERV39k_files/ElegantArt3.gif" width="200px"></a>
+						<br>
+					</center>
+				</td>
+			</tr>
+			<tr>
+				<td width="400px">
+					<center>
+						<span style="font-size:14px"><i>
+								Elegant Art
+							</i>
+						</span>
+					</center>
+				</td>
+
+		</tr></tbody><tbody>
+			<tr>
+				<td width="400px">
+					<center>
+						<a><img class="rounded" src="./FERV39k_files/Medicine1.gif" width="200px"></a>
+						<a><img class="rounded" src="./FERV39k_files/Medicine2.gif" width="200px"></a>
+						<a><img class="rounded" src="./FERV39k_files/Medicine3.gif" width="200px"></a>
+						<br>
+					</center>
+				</td>
+			</tr>
+			<tr>
+				<td width="400px">
+					<center>
+						<span style="font-size:14px"><i>
+								Medicine
+							</i>
+						</span>
+					</center>
+				</td>
+
+		</tr></tbody><tbody>
+			<tr>
+				<td width="400px">
+					<center>
+						<a><img class="rounded" src="./FERV39k_files/school1.gif" width="200px"></a>
+						<a><img class="rounded" src="./FERV39k_files/school2.gif" width="200px"></a>
+						<a><img class="rounded" src="./FERV39k_files/school3.gif" width="200px"></a>
+						<br>
+					</center>
+				</td>
+			</tr>
+			<tr>
+				<td width="400px">
+					<center>
+						<span style="font-size:14px"><i>
+								School
+							</i>
+						</span>
+					</center>
+				</td>
+
+			</tr>
+		</tbody>
+	</table>
+	<br><br>
+	<hr>
+
+
+	<!-- <center><h1>Examples of scenes</h1></center><p style="text-align:justify; text-justify:inter-ideograph;">
+				<span>
+					&nbsp&nbsp&nbsp&nbspWe present several examples of expressions in several scenes.
+					Each group belongs to seven basic expressions in a scene (Happy, Sad, Surprise, Fear, Angry, Disgust, and Neutral).
+					It can be seen the impact of scenes to an expression.</span>
+				<br>
+				</p><table align="center" width="720px">
+			
+			<tbody><tr>
+				
+				<td width="360px">
+					<center>
+						<span style="font-size:22px"><a>Balance Beam (BB)</a></span><br>
+						<a><img onmouseover="this.src=&#39;./resources/examples/example_bb_01_slow.gif&#39;;" onmouseout="this.src=&#39;./resources/examples/example_bb_01_normal.gif&#39;;" src="./FERV39k/example_bb_01_normal.gif" width="100px"></a>
+						<a><img onmouseover="this.src=&#39;./resources/examples/example_bb_02_slow.gif&#39;;" onmouseout="this.src=&#39;./resources/examples/example_bb_02_normal.gif&#39;;" src="./FERV39k/example_bb_02_normal.gif" width="100px"></a>
+						<a><img onmouseover="this.src=&#39;./resources/examples/example_bb_03_slow.gif&#39;;" onmouseout="this.src=&#39;./resources/examples/example_bb_03_normal.gif&#39;;" src="./FERV39k/example_bb_03_normal.gif" width="100px"></a>
+					</center>
+				</td>
+				<td width="360px">
+					<center>
+						<span style="font-size:22px"><a>Floor Exercise (FX)</a></span><br>
+						<a><img onmouseover="this.src=&#39;./resources/examples/example_fx_01_slow.gif&#39;;" onmouseout="this.src=&#39;./resources/examples/example_fx_01_normal.gif&#39;;" src="./FERV39k/example_fx_01_normal.gif" width="100px"></a>
+						<a><img onmouseover="this.src=&#39;./resources/examples/example_fx_02_slow.gif&#39;;" onmouseout="this.src=&#39;./resources/examples/example_fx_02_normal.gif&#39;;" src="./FERV39k/example_fx_02_normal.gif" width="100px"></a>
+						<a><img onmouseover="this.src=&#39;./resources/examples/example_fx_03_slow.gif&#39;;" onmouseout="this.src=&#39;./resources/examples/example_fx_03_normal.gif&#39;;" src="./FERV39k/example_fx_03_normal.gif" width="100px"></a>
+					</center>
+				</td>
+			</tr>
+			<tr>
+				<td width="360px">
+					<center>
+						<span style="font-size:22px"><a>Uneven Bar (UB)</a></span><br>
+						<a><img onmouseover="this.src=&#39;./resources/examples/example_ub_01_slow.gif&#39;;" onmouseout="this.src=&#39;./resources/examples/example_ub_01_normal.gif&#39;;" src="./FERV39k/example_ub_01_normal.gif" width="100px"></a>
+						<a><img onmouseover="this.src=&#39;./resources/examples/example_ub_02_slow.gif&#39;;" onmouseout="this.src=&#39;./resources/examples/example_ub_02_normal.gif&#39;;" src="./FERV39k/example_ub_02_normal.gif" width="100px"></a>
+						<a><img onmouseover="this.src=&#39;./resources/examples/example_ub_03_slow.gif&#39;;" onmouseout="this.src=&#39;./resources/examples/example_ub_03_normal.gif&#39;;" src="./FERV39k/example_ub_03_normal.gif" width="100px"></a>
+					</center>
+				</td>
+				<td width="360px">
+					<center>
+						<span style="font-size:22px"><a>Vault (VT)</a></span><br>
+						<a><img onmouseover="this.src=&#39;./resources/examples/example_vt_01_slow.gif&#39;;" onmouseout="this.src=&#39;./resources/examples/example_vt_01_normal.gif&#39;;" src="./FERV39k/example_vt_01_normal.gif" width="100px"></a>
+						<a><img onmouseover="this.src=&#39;./resources/examples/example_vt_02_slow.gif&#39;;" onmouseout="this.src=&#39;./resources/examples/example_vt_02_normal.gif&#39;;" src="./FERV39k/example_vt_02_normal.gif" width="100px"></a>
+						<a><img onmouseover="this.src=&#39;./resources/examples/example_vt_03_slow.gif&#39;;" onmouseout="this.src=&#39;./resources/examples/example_vt_03_normal.gif&#39;;" src="./FERV39k/example_vt_03_normal.gif" width="100px"></a>
+					</center>
+				</td>
+			</tr>
+		  </tbody></table>
+
+		  <br><br>
+		  <hr> -->
+
+	<center>
+		<h1>Empirical Studies and Analysis</h1>
+	</center>
+	<table id="analysis" align="center" width="720px">
+
+	</table>
+	<center>
+		<h2> (1) Results of four kinds of baseline architectures trained from scratch on FERV39k (WAR/UAR). </h2>
+	</center>
+	<table>
+
+		<tbody>
+			<tr>
+				<td width="400px">
+					<center>
+						<a></a><a href="./FERV39k_files/result.png"><img class="rounded" src="./FERV39k_files/result.png" width="750px"></a><br>
+					</center>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" width="720px">
+					<span style="font-size:14px"><i>
+							Results of four kinds of baseline architectures.</i>
+					</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br>
+
+	<center>
+		<h2> (2) Comparison of cross-scenario results on DL11k, WIS9k, SIA10k, and AI9k of FERV39k on RS50-LSTM. </h2>
+	</center>
+	<table>
+
+		<tbody>
+			<tr>
+				<td width="400px">
+					<center>
+						<a></a><a href="./FERV39k_files/cross.png"><img class="rounded" src="./FERV39k_files/cross.png" width="400px"></a><br>
+					</center>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" width="720px">
+					<span style="font-size:14px"><i>
+							Comparison of cross-scenario results of RS50-LSTM.</i>
+					</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	<!--			<br>-->
+
+	<!--			<center><h2> (3) How important is temporal information? </h2></center>-->
+	<!--				(a) Motion features (e.g. optical flows) could capture frame-wise temporal dynamics, leading to better performance of TSN.<br>-->
+	<!--				(b) Temporal dynamics play an important role in FineGym, and TRN could capture it.<br>-->
+	<!--				(c) Performance of TSM drops sharply when the number of testing frames is very different from that in training,-->
+	<!--				while TSN maintains its performance as only temporal average pooling is applied in it.<br><table>-->
+	<!--				-->
+	<!--				<tbody><tr>-->
+	<!--					  <td width="400px">-->
+	<!--					  <center>-->
+	<!--						  <a><img class="rounded" src="./FERV39k/temporal_importance.png" width="800px"></a><br>-->
+	<!--					</center>-->
+	<!--					</td>-->
+	<!--				</tr>-->
+	<!--				<tr>-->
+	<!--					<td align="center" width="720px">-->
+	<!--					  <span style="font-size:14px"><i>-->
+	<!--						(a) Per-class performances of TSN with motion and appearance features in 6 element categories. <br>-->
+	<!--						(b) Performances of TRN on the set UB-circles using ordered or shuffled testing frames.<br>-->
+	<!--						(c) Mean-class accuracies of TSM and TSN on Gym99 when trained with 3 frames and tested with more frames.</i>-->
+	<!--					</span>-->
+	<!--					</td>-->
+	<!--				</tr>-->
+	<!--				</tbody></table>-->
+
+	<!--			<br>-->
+
+	<!--			<center><h2> (4) Does pre-training on large-scale video datasets help? </h2></center>-->
+	<!--				On FineGym, pre-training on Kinetics is not always helpful.-->
+	<!--				One potential reason is the large gaps in terms of temporal patterns between coarse- and fine-grained actions. -->
+	<!--				<table>-->
+	<!--				<tbody><tr>-->
+	<!--					<td width="400px">-->
+	<!--					<center>-->
+	<!--						<a><img class="rounded" src="./FERV39k/pretrain.png" width="240px"></a>-->
+	<!--					</center>-->
+	<!--					</td>-->
+	<!--				</tr>-->
+	<!--				<tr>-->
+	<!--					<td align="center" width="720px">-->
+	<!--					<span style="font-size:14px"><i>-->
+	<!--					Per-class performances of I3D pre-trained on Kinetics and ImageNet in various element categories.</i>-->
+	<!--					</span>-->
+	<!--					</td>-->
+	<!--				</tr>-->
+	<!--				</tbody></table>-->
+
+	<!--			<br>-->
+	<!--			-->
+	<!--			<center><h2> (4) Why pose information does not help? </h2></center>-->
+	<!--				Skeleton-based ST-GCN struggles due to the challenges in skeleton estimation on gymnastics instances.-->
+	<!--				<table>-->
+	<!--				<tbody><tr>-->
+	<!--					<td width="400px">-->
+	<!--					<center>-->
+	<!--						<a><img onmouseover="this.src=&#39;./resources/examples/pose_slow.gif&#39;;" onmouseout="this.src=&#39;./resources/examples/pose.gif&#39;;" src="./FERV39k/pose.gif" width="400px"></a>-->
+	<!--					</center>-->
+	<!--					</td>-->
+	<!--				</tr>-->
+	<!--				<tr>-->
+	<!--					<td align="center" width="720px">-->
+	<!--					<span style="font-size:14px"><i>-->
+	<!--					The results of person detection and pose estimation using <a href="https://github.com/MVIG-SJTU/AlphaPose">AlphaPose</a> for a Vault routine.-->
+	<!--					It can be seen that detections and pose estimations of the gymnast are missed in multiple frames, especially in frames with intense motion.-->
+	<!--					These frames are important for fine-grained recognition. (Hover on the GIF for a 0.25x slowdown) </i>-->
+	<!--					</span>-->
+	<!--					</td>-->
+	<!--				</tr>-->
+	<!--				</tbody></table>-->
+	<!--					-->
+	<!--		-->
+	<!--	      <br><br>-->
+	<br>
+	<hr>
+
+	<center>
+		<h1>Download</h1>
+	</center>
+	<table id="download" align="center" width="720px">
+
+		<tbody>
+			<tr>
+				<td width="400px">
+					<center>
+						<a><img class="rounded" src="./FERV39k_files/data_icon.png" width="100px"></a>
+						<br>
+					</center>
+				</td>
+
+			</tr>
+		</tbody>
+	</table>
+
+	<br>
+
+	<center><span style="font-size:16px"><a href="https://wangyanckxx.github.io/Proj_CVPR2022_FERV39k.html">Download Link</a></span><br></center>
+
+	<br><br>
+	<hr>
+
+	<!-- <center><h1>Download</h1></center><table id="download" align="center" width="720px">
+			
+			<tbody><tr>
+				<td width="300px">
+					<center>
+						<span style="font-size:24px">Categories</span><br>
+						<br>
+						<img class="rounded" onmouseover="this.src=&#39;./resources/images/dataset_icon.jpg&#39;;" onmouseout="this.src=&#39;./resources/images/dataset_icon.jpg&#39;;" src="./FERV39k/dataset_icon.jpg" height="150px"><br><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/finegym_glabel_to_Qtree.json">question annotation (json)</a></span><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/set_categories.txt">set-level category list (txt)</a></span><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/gym99_categories.txt">Gym99 category list (txt)</a></span><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/gym288_categories.txt">Gym288 category list (txt)</a></span><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/gym530_categories.txt">Gym530 category list (txt)</a></span><br>
+					<span style="font-size:16px"></span>
+					</center>
+				</td>
+				<td width="300px">
+					<center>
+						<span style="font-size:24px">v1.0</span><br>
+						<br>
+						<img class="rounded" onmouseover="this.src=&#39;./resources/images/dataset_icon.jpg&#39;;" onmouseout="this.src=&#39;./resources/images/dataset_icon.jpg&#39;;" src="./FERV39k/dataset_icon.jpg" height="150px"><br><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/finegym_annotation_info_v1.0.json">temporal annotation (json)</a></span><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/gym99_train_element_v1.0.txt">Gym99 train split</a></span><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/gym99_val_element.txt">Gym99 val split</a></span><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/gym288_train_element_v1.0.txt">Gym288 train split</a></span><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/gym288_val_element.txt">Gym288 val split</a></span><br>
+					<span style="font-size:16px"></span>
+					</center>
+				</td>
+				<td width="300px">
+					<center>
+						<span style="font-size:24px">v1.1</span><br><br>
+						<img class="rounded" onmouseover="this.src=&#39;./resources/images/dataset_icon.jpg&#39;;" onmouseout="this.src=&#39;./resources/images/dataset_icon.jpg&#39;;" src="./FERV39k/dataset_icon.jpg" height="150px"><br><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/finegym_annotation_info_v1.1.json">temporal annotation (json)</a></span><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/gym99_train_element_v1.1.txt">Gym99 train split</a></span><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/gym99_val_element.txt">Gym99 val split (same as v1.0)</a></span><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/gym288_train_element_v1.1.txt">Gym288 train split</a></span><br>
+						<span style="font-size:16px"><a href="https://kgbmax.github.io/resources/dataset/gym288_val_element.txt">Gym288 val split (same as v1.0)</a></span><br>
+					<span style="font-size:16px"></span>
+					</center>
+				</td>
+				</tr></tbody></table><center><h2> Updates </h2></center>
+				[14/02/2022] We published the first version of FERV39K. Check out <a href="https://github.com/SDOlivia/FineGym/">here</a>.<br> -->
+	<!--				[16/04/2020] We fix a small issue on the naming of the subaction identifier "A_{ZZZZ}_{WWWW}" to avoid ambiguity.-->
+	<!--				(Thanks <a href="https://kennymckormick.github.io/">Haodong Duan</a> for pointing this out.)<br>-->
+	<!--				[16/04/2020] We include new subsections to track updates and address FAQs.-->
+	<br>
+	<center>
+		<h2> FAQs </h2>
+	</center>
+	Q0: License issue:<br>
+	A0: The annotations of FERV39k are copyright by us and published under the Creative Commons
+	Attribution-NonCommercial 4.0 International License.<br>
+	<!--				Q1: Some links are invalid on YouTube. How can I obtain the missing videos?<br>-->
+	<!--				Q1': I am located in mainland China and I cannot access YouTube. How can I get the dataset?<br>-->
+	<!--				A1: Please submit a Google form at <a href="https://forms.gle/z8iTwRhdMsfRCNkm7">this link</a>.-->
+	<!--				We may reach you shortly.<br>-->
+	<!--				Q2: Is the event-/element-level instance in your dataset cut in integral seconds?<br>-->
+	<!--				A2: No. All levels of instances (actions and sub-actions) are annotated in <i>exact</i> timestamp (milliseconds) -->
+	<!--				in a pursuit of frame-level preciseness.-->
+	<!--				The number in the identifier is derived from integral seconds due to conciseness.-->
+	<!--				Please refer to the instructions below for details.<br>-->
+	<!--				Q3: Difference of Mean and Top-1 accuracy in Table 2 &amp; 3?<br>-->
+	<!--				A3: The Top-K accuracy is the fraction of the instances whose correct label falls in the top-k most confident predictions. In our case we take K=1.<br>-->
+	<!--				The mean accuracy is the averaged per-class accuracy. To be specific, we calculate the top-1 accuracy of each class i to be A_i.-->
+	<!--				The mean accuracy is the arithmetic mean of A_{1...N}, i.e. (A_1 + A_2 + ... + A_N)/N, where N is the number of classes.-->
+	<!--				<center><h2> How to read the temporal annotation files (JSON)? </h2></center> -->
+	<!--				Below, we show an example entry from the above JSON annotation file:-->
+	<!--				<pre style="font-family: Courier; font-size:14px">"0LtLS9wROrk": {-->
+	<!--	"E_002407_002435": {-->
+	<!--		"event": 4,-->
+	<!--		"segments": {-->
+	<!--			"A_0003_0005": {-->
+	<!--				"stages": 1,-->
+	<!--				"timestamps": [-->
+	<!--					[-->
+	<!--						3.45,-->
+	<!--						5.64-->
+	<!--					]-->
+	<!--				]-->
+	<!--			},-->
+	<!--			"A_0006_0008": { ... },-->
+	<!--			"A_0023_0028": { ... },-->
+	<!--			...-->
+	<!--		},-->
+	<!--		"timestamps": [-->
+	<!--			[-->
+	<!--				2407.32,-->
+	<!--				2435.28-->
+	<!--			]-->
+	<!--		]-->
+	<!--	},-->
+	<!--	"E_002681_002688": {-->
+	<!--		"event": 1,-->
+	<!--		"segments": {-->
+	<!--			"A_0000_0006": {-->
+	<!--				"stages": 3,-->
+	<!--				"timestamps": [-->
+	<!--					[-->
+	<!--						0.04,-->
+	<!--						3.2-->
+	<!--					],-->
+	<!--					[-->
+	<!--						3.2,-->
+	<!--						4.49-->
+	<!--					],-->
+	<!--					[-->
+	<!--						4.49,-->
+	<!--						6.57-->
+	<!--					]-->
+	<!--				]-->
+	<!--			}-->
+	<!--		},-->
+	<!--		"timestamps": [-->
+	<!--			[-->
+	<!--				2681.88,-->
+	<!--				2688.48-->
+	<!--			]-->
+	<!--		]-->
+	<!--	},-->
+	<!--	"E_002710_002737": { ... },-->
+	<!--	...-->
+	<!--}-->
+	<!--				</pre><table>-->
+	<!--				-->
+	<!--				-->
+	<!--				</table>-->
+	<!--				The example shows the annotations related to this video.-->
+	<!--				First of all, we assign the unique identifier <a style="font-family: Courier">"0LtLS9wROrk"</a> to that video,-->
+	<!--				which corresponds to the 11-digit YouTube identifier. <br>-->
+	<!--				It contains all action (event-level) instances, whose names follow the format of <a style="font-family: Courier">"E_{XXXXXX}_{YYYYYY}"</a>.-->
+	<!--				Here, "E" indicates "Event", and "XXXXXX"/"YYYYYY" indicates the zero-padded starting and ending timestamp (in seconds and truncated to Int).-->
+	<!--				<br>-->
+	<!--				Each action instance includes (1) the exact timestamps in the original video ('timestamps', in seconds),-->
+	<!--				(2) event label ('event'), and-->
+	<!--				(3) a list of annotated subaction (element-level) instances ('segments').-->
+	<!--				<br>-->
+	<!--				The annotated subaction instances follow the format of <a style="font-family: Courier">"A_{ZZZZ}_{WWWW}"</a>.-->
+	<!--				Here, "A" indicates "subAction", and "ZZZZ"/"WWWW" indicates the zero-padded starting and ending timestamp (in seconds and truncated to Int).-->
+	<!--				<br>-->
+	<!--				Ech subaction instance includes (1) the number of stages of this subaction instance ('stages', 3 for Vault and 1 for other events)-->
+	<!--				(2) the exact timestamps of each stage <i>relative</i> to the starting time of event. ('timestamps', in seconds)-->
+	<!--				As a result, each subaction instance has a unique identifier <a style="font-family: Courier">"{VIDEO_ID}_E_{XXXXXX}_{YYYYYY}_A_{ZZZZ}_{WWWW}"</a>.-->
+	<!--				This identifier serves as the instance name in the train/val splits of Gym99 and Gym288.-->
+	<!--			-->
+	<!--		   -->
+
+	<!--		   <center><h2> How to read the question annotation files (JSON)? </h2></center>-->
+	<!--			Below, we show an example entry from the above JSON annotation file:-->
+	<!--			<pre style="font-family: Courier; font-size:14px">"0": {-->
+	<!--	"BTcode": "1111111",-->
+	<!--	"questions": [-->
+	<!--		"round-off onto the springboard?",-->
+	<!--		"turning entry after round-off (turning in first flight phase)?",-->
+	<!--		"Facing the coming direction when handstand on vault-->
+	<!--		(0.5 turn in first flight phase)?",-->
+	<!--		"Body keep stretched  during salto (stretched salto)?",-->
+	<!--		"Salto with turn?",-->
+	<!--		"Facing vault table after landing?",-->
+	<!--		"Salto with 1.5 turn?"-->
+	<!--	],-->
+	<!--	"code": "6.00"-->
+	<!--},-->
+	<!--"1": {-->
+	<!--	"BTcode": "1111110",-->
+	<!--	"questions": [-->
+	<!--		"round-off onto the springboard?",-->
+	<!--		"turning entry after round-off (turning in first flight phase)?",-->
+	<!--		"Facing the coming direction when handstand on vault-->
+	<!--		(0.5 turn in first flight phase)?",-->
+	<!--		"Body keep stretched  during salto (stretched salto)?",-->
+	<!--		"Salto with turn?",-->
+	<!--		"Facing vault table after landing?",-->
+	<!--		"Salto with 1.5 turn?"-->
+	<!--	],-->
+	<!--	"code": "5.20"-->
+	<!--},-->
+	<!--...-->
+	<!--			</pre><table>-->
+	<!--			-->
+	<!--			</table>-->
+	<!--			The example shows the questions related to each class.-->
+	<!--			The identifier corresponds to the label name provided in <a href="https://kgbmax.github.io/resources/dataset/gym530_categories_wset.txt">Gym530 category list</a>.-->
+	<!--			Each class includes (1) a list of questions that are asked ('quetions'),-->
+	<!--			(2) a string of binary codes ('BTcode') where 1 refers to 'yes' and 0 refers to 'no',-->
+	<!--			(3) and original code in the <a href="http://www.fig-gymnastics.com/publicdir/rules/files/en_WAG%20CoP%202017-2020.pdf">official codebook</a>.-->
+	<!--		-->
+
+
+	<br><br>
+	<hr>
+
+	<center>
+		<h1>Paper</h1>
+	</center>
+	<table align="center" width="720px">
+
+		<tbody>
+			<tr>
+				<td align="center"><a href="https://arxiv.org/abs/2203.09463"><img class="layered-paper-big" style="height:160px" src="./FERV39k_files/paper_pdf_thumb.png"></a></td>
+				<td>
+					<p style="text-align:justify; text-justify:inter-ideograph;"><span style="font-size:14pt">Yan, Wang
+							et al.<br> FERV39k: A Large-Scale Multi-Scene Dataset <br>for Facial Expression Recognition
+							in Videos. In CVPR, 2022.<br>
+							(<a href="https://arxiv.org/abs/2203.09463">arXiv</a>)
+							<span style="font-size:4pt"><a href="https://github.com/wangyanckxx/FERV39k"><br></a>
+							</span>
+						</span></p>
+				</td>
+				<td align="center"><a href="https://arxiv.org/abs/2203.09463"><img class="layered-paper-big" style="height:160px" src="./FERV39k_files/supp_pdf_thumb.png"></a></td>
+				<td><span style="font-size:14pt">
+						(<a href="https://arxiv.org/abs/2203.09463">Additional details/<br>supplementary
+							materials</a>)
+						<span style="font-size:4pt"><a href="https://github.com/wangyanckxx/FERV39k"><br></a>
+						</span>
+					</span></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br><br>
+	<hr>
+
+	<center>
+		<h1>Cite</h1>
+	</center>
+	<div class="disclaimerbox">
+		<!-- <center><h2>How to interpret the results</h2></center> -->
+
+		<span>
+			<!-- <center><span style="font-size:28px"><b>Cite</b></span></center> -->
+			<pre style="font-family:Courier; font-size:16px">@inproceedings{wang2022ferv39k,
+title={FERV39k: A Large-Scale Multi-Scene Dataset for Facial Expression 
+	Recognition in Videos},
+author={Yan Wang, Yixuan Sun, Yiwen Huang, Zhongying Liu,
+					Shuyong Gao, Wei Zhang, Weifeng Ge, Wenqiang Zhang},
+booktitle={IEEE Conference on Computer Vision and Pattern Recognition 
+	(CVPR)},
+year={2022}
+}</pre>
+		</span>
+	</div>
+	<table align="center" width="720px">
+
+
+	</table>
+
+	<br><br>
+	<hr>
+
+
+	<table align="center" width="720px">
+		<tbody>
+			<tr>
+				<td width="400px">
+					<left>
+						<center>
+							<h1>Acknowledgements</h1>
+						</center>
+						We sincerely thank the outstanding annotation team for their excellent work（京东众包的名字和链接）.
+						The template of this webpage is borrowed from <a href="https://richzhang.github.io/colorization/">Richard Zhang</a><a>.
+						</a>
+					</left><a>
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br><br>
+	<hr>
+
+	<table align="center" width="720px">
+		<tbody>
+			<tr>
+				<td width="400px">
+					<left>
+						<center>
+							<h1>Contact</h1>
+						</center>
+						For further questions and suggestions, please contact Yan Wang (<a href="mailto:yanwang19@fudan.edu.cn">yanwang19@fudan.edu.cn</a>).
+
+
+					</left>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br><br>
+
+	<script>
+
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-75863369-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+
+
+
+
+
+</body></html>
